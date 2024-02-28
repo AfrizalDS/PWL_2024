@@ -13,6 +13,40 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/hello', function () {
+    return 'hello world';
 });
+
+
+Route::get('/world', function () { 
+return 'World'; 
+}); 
+
+Route::get('/', function () {
+    return 'Selamat Datang';
+});
+
+Route::get('/about', function () {
+    return '2241720122 <br> Afrizal Dwi Septian';
+});
+
+Route::get('/user/{name}', function ($name) { 
+    return 'Nama saya '.$name; 
+    });
+    
+Route::get('/posts/{post}/comments/{comment}', function 
+($postId, $commentId) { 
+    return 'Pos ke-'.$postId." Komentar ke-: ".$commentId; 
+    }); 
+
+Route::get('/articles/{id}', function ($id) { 
+    return 'Halaman Dengan Id:'.$id; 
+    });
+    
+Route::get('/user/{name?}', function ($name = null) { 
+    return 'Nama saya '.$name; 
+    });
