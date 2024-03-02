@@ -24,22 +24,22 @@ use App\Http\Controllers\PhotoController;
 //     return view('welcome');
 // });
 
-Route::get('/hello', function () {
-    return 'hello world';
-});
+// Route::get('/hello', function () {
+//     return 'hello world';
+// });
 
 
 Route::get('/world', function () { 
 return 'World'; 
 }); 
 
-// Route::get('/', function () {
-//     return 'Selamat Datang';
-// });
+Route::get('/', function () {
+    return 'Selamat Datang';
+});
 
-// Route::get('/about', function () {
-//     return '2241720122 <br> Afrizal Dwi Septian';
-// });
+Route::get('/about', function () {
+    return '2241720122 <br> Afrizal Dwi Septian';
+});
 
 Route::get('/user/{name}', function ($name) { 
     return 'Nama saya '.$name; 
@@ -54,16 +54,20 @@ Route::get('/posts/{post}/comments/{comment}', function
 //     return 'Halaman Dengan Id:'.$id; 
 //     });
     
-Route::get('/user/{name?}', function ($name = null) { 
-    return 'Nama saya '.$name; 
-    });
+// Route::get('/user/{name?}', function ($name = null) { 
+//     return 'Nama saya '.$name; 
+//     });
 
+Route::get('/user/{name?}', function ($name='John') { 
+    return 'Nama saya '.$name; 
+    }); 
+    
  Route::get('/hello', [WelcomeController::class,'hello']); 
  
  
- Route::get('/index', [PageController::class,'index']); 
- Route::get('/about', [PageController::class,'about']); 
- Route::get('/articles', [PageController::class,'articles']); 
+//  Route::get('/index', [PageController::class,'index']); 
+//  Route::get('/about', [PageController::class,'about']); 
+//  Route::get('/articles/{id}', [PageController::class,'articles']); 
 
  
  Route::get('/index', [HomeController::class,'index']); 

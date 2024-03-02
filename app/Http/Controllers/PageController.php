@@ -16,6 +16,6 @@ class PageController extends Controller
 
     public function articles($id)
     {
-        return 'Halaman dengan ID: ' . $id;
+        return 'Halaman dengan ID: '.$id;
     }
 }
